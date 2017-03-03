@@ -1,6 +1,6 @@
 {
   "name": "it-forum-template",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "An angular template for an it forum.",
   "scripts": {
     "build": "tsc -p src/",
@@ -42,6 +42,7 @@
   "devDependencies": {
     "@types/jasmine": "2.5.36",
     "@types/node": "^6.0.46",
+    "awesome-typescript-loader": "^3.0.8",
     "canonical-path": "0.0.2",
     "concurrently": "^3.2.0",
     "gulp": "^3.9.1",

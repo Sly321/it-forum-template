@@ -13,8 +13,8 @@ var builtPaths = (__karma__.config.builtPaths || ['src/'])
 
 __karma__.loaded = function () { };
 
-function isJsFile(path) {
-  return path.slice(-3) == '.js';
+function isNecessaryFile(path) {
+  return path.slice(-3) == '.js' || path.slice(-5) == '.html';
 }
 
 function isSpecFile(path) {
@@ -23,7 +23,7 @@ function isSpecFile(path) {
 
 // Is a "built" file if is JavaScript file in one of the "built" folders
 function isBuiltFile(path) {
-  return isJsFile(path) &&
+  return isNecessaryFile(path) &&
          builtPaths.reduce(function(keep, bp) {
            return keep || (path.substr(0, bp.length) === bp);
          }, false);
