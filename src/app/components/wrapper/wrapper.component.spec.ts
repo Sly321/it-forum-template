@@ -1,24 +1,29 @@
+/**
+ * Test Wrapper
+ * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ * ...				3.3.2017				Created
+ */
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { } from 'jasmine';
 
-import { AppComponent } from './app.component';
+import { Wrapper } from ':/wrapper/wrapper.component}';
 
-describe('AppComponent', function() {
+describe('Wrapper', () => {
 	let de: DebugElement;
-	let comp: AppComponent;
-	let fixture: ComponentFixture<AppComponent>;
+	let comp: Wrapper;
+	let fixture: ComponentFixture;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [AppComponent]
-		})
-			.compileComponents();
+			declarations: [Wrapper]
+		}).compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(AppComponent);
+		fixture = TestBed.createComponent(Wrapper);
 		comp = fixture.componentInstance;
 		de = fixture.debugElement.query(By.css('h1'));
 	});
