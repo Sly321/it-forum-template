@@ -1,3 +1,4 @@
 # Angular it-forum-template with firebase integration
 
-more soon
+Current Build:
+![build](https://travis-ci.org/Sly321/it-forum-template.svg?branch=master)
