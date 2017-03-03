@@ -17,7 +17,7 @@ gulp.task('compile-test', function () {
     return gulp.src(['./e2e/*.ts'])
         .pipe(tsProject())
         .on('error', util.log)
-        .pipe(gulp.dest('./test/'));
+        .pipe(gulp.dest('./e2e/'));
 });
 
 gulp.task('compile-src', function () {
