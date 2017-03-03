@@ -15,7 +15,7 @@ import { Wrapper } from './wrapper.component';
 
 @Component({
 	selector: 'router-outlet',
-	template: "<h1>mockingjay</h1>"
+	template: '<h1>mockingjay</h1>'
 })
 class Mock { }
 

@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 	styleUrls: ['app/components/landing/landing.css']
 })
 export class Landing {
-	heyhoworld: string = "heyho";
+	heyhoworld: string = 'heyho';
 
 	constructor() {
 	}

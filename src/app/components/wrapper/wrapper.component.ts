@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 	styleUrls: ['app/components/wrapper/wrapper.css']
 })
 export class Wrapper {
-	heyhoworld: string = "heyho";
+	heyhoworld: string = 'heyho';
 
 	constructor() {
 	}

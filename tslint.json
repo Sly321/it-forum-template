@@ -6,11 +6,11 @@
       "check-space"
     ],
     "curly": true,
-    "eofline": true,
+    "eofline": false,
     "forin": true,
     "indent": [
       true,
-      "spaces"
+      "tabs"
     ],
     "label-position": true,
     "label-undefined": true,
