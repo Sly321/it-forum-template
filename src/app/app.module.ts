@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 /** Components */
 import { Wrapper } from './components/wrapper/wrapper.component';
 import { Landing } from './components/landing/landing.component';
+import { Header } from './components/header/header.component';
 
 /** Third Party Angular */
 import '../node_modules/rxjs/add/operator/toPromise';
@@ -18,7 +19,7 @@ import { routes } from './app.routes';
 
 @NgModule({
 	imports: [BrowserModule, RouterModule.forRoot(routes)],
-	declarations: [Wrapper, Landing],
+	declarations: [Wrapper, Landing, Header],
 	bootstrap: [Wrapper]
 })
 export class AppModule { }
