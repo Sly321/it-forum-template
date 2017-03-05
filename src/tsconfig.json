@@ -12,7 +12,9 @@
 		"noImplicitUseStrict": true,
 		"allowUnreachableCode": true,
 		"suppressImplicitAnyIndexErrors": true,
-		"experimentalDecorators": true
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true
+
 	},
 	"filesGlob": [
 		"./**/*.ts",
