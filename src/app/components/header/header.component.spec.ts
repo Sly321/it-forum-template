@@ -12,7 +12,7 @@ import { } from 'jasmine';
 import { Header } from './header.component';
 
 describe('Header', () => {
-	let de: DebugElement;
+	let de: DebugElement[];
 	let comp: Header;
 	let fixture: ComponentFixture<Header>;
 
@@ -34,10 +34,65 @@ describe('Header', () => {
 
 	it('should create component', () => expect(comp).toBeDefined());
 
-	it('header should link to the startpage', () => {
-		de = fixture.debugElement.query(By.css('.header-container > ul > li > a'));
+	it('HtmlElement Should link to Startpage in the left header menu', () => {
+		// Vorbereitung
+		let cssQuery = '.header-container > .left-menu > li > a';
+		de = fixture.debugElement.queryAll(By.css(cssQuery));
+		console.log(de);
 		fixture.detectChanges();
-		const a = de.nativeElement;
-		expect(a.innerText).toMatch(/Startpage/i, '.header-container > ul > li > a should link to "Startpage"');
+		const element = de[0].nativeElement;
+		console.log(element);
+		// Ausführung
+		let expected = /Startpage/i;
+		let msg = 'Header should link to the startpage';
+
+		// Prüfung
+		expect(element.innerText).toMatch(expected, msg);
+	});
+
+	it('HtmlElement Should link to Beiträge in the left header menu', () => {
+		// Vorbereitung
+		let cssQuery = '.header-container > .left-menu > li > a';
+		de = fixture.debugElement.queryAll(By.css(cssQuery));
+		console.log(de);
+		fixture.detectChanges();
+		const element = de[1].nativeElement;
+		console.log(element);
+		// Ausführung
+		let expected = /Beiträge/i;
+		let msg = 'Header should link to Beträge';
+
+		// Prüfung
+		expect(element.innerText).toMatch(expected, msg);
+	});
+
+	it('HtmlElement Should link to Login in the right header menu', () => {
+		// Vorbereitung
+		let cssQuery = '.header-container > .right-menu > li > a';
+		de = fixture.debugElement.queryAll(By.css(cssQuery));
+		fixture.detectChanges();
+		const element = de[0].nativeElement;
+
+		// Ausführung
+		let expected = /Login/i;
+		let msg = 'Header should link to the login';
+
+		// Prüfung
+		expect(element.innerText).toMatch(expected, msg);
+	});
+
+	it('HtmlElement Should link to Login in the right header menu', () => {
+		// Vorbereitung
+		let cssQuery = '.header-container > .right-menu > li > a';
+		de = fixture.debugElement.queryAll(By.css(cssQuery));
+		fixture.detectChanges();
+		const element = de[1].nativeElement;
+
+		// Ausführung
+		let expected = /Logout/i;
+		let msg = 'Header should link to the Logout';
+
+		// Prüfung
+		expect(element.innerText).toMatch(expected, msg);
 	});
 });
