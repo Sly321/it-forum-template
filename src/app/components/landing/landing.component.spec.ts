@@ -1,7 +1,7 @@
 /**
  * Test Landing
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * ...				3.3.2017				Created
+ * Sven Liebig				3.3.2017				Created
  */
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -30,14 +30,21 @@ describe('Landing', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(Landing);
 		comp = fixture.componentInstance;
-		de = fixture.debugElement.query(By.css('.landing-container'));
 	});
 
 	it('should create component', () => expect(comp).toBeDefined());
 
-	it('should have expected .landing-container text with "heyho"', () => {
+	it('HtmlElement Should be Startpage link in the left header menu', () => {
+		// Vorbereitung
+		let cssQuery = 'header';
+		de = fixture.debugElement.query(By.css(cssQuery));
 		fixture.detectChanges();
-		const container = de.nativeElement;
-		expect(container.innerText).toMatch(/heyho/i, '<div.landing-container> should say something about "heyho"');
+		const element = de.nativeElement;
+
+		// Ausführung
+		let msg = 'Startpage should import header';
+
+		// Prüfung
+		expect(element.innerText).toBeDefined();
 	});
 });
