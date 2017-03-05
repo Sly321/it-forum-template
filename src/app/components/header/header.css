@@ -1,7 +1,21 @@
-.header-wrapper {
-	
+* {
+	margin: 0;
+	padding: 0;
 }
 
-.header-container {
-	
+.header-wrapper {
+
+}
+
+.left-menu {
+	float: left;
+}
+
+.right-menu {
+	float: right;
+}
+
+.header-container > ul > li {
+	list-style: none;
+	float: left;
 }
