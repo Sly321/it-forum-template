@@ -55,26 +55,31 @@ module.exports = function(config) {
       { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
 
+      // Angular2 JWT
+      { pattern: 'node_modules/angular2-jwt/**/*.js', included: false, watched: false },
+      { pattern: 'node_modules/angular2-jwt/**/*.js.map', included: false, watched: false },
+
       { pattern: appBase + '/systemjs.config.js', included: false, watched: false },
       { pattern: appBase + '/systemjs.config.extras.js', included: false, watched: false },
       'karma-test-shim.js', // optionally extend SystemJS mapping e.g., with barrels
 
       // transpiled application & spec code paths loaded via module imports
       { pattern: appBase + '**/*.js', included: false, watched: true },
-      { pattern: testingBase + '**/*.js', included: false, watched: true },
+      // { pattern: testingBase + '**/*.js', included: false, watched: true },
 
 
       // Asset (HTML & CSS) paths loaded via Angular's component compiler
       // (these paths need to be rewritten, see proxies section)
-      { pattern: appBase + '**/*.html', included: true, watched: true },
-      { pattern: appBase + '**/*.css', included: true, watched: true },
+      { pattern: appBase + 'app/components/**/*.html', included: true, watched: true },
+      { pattern: appBase + 'app/components/**/*.css', included: true, watched: true },
 
       // Paths for debugging with source maps in dev tools
-      { pattern: appBase + '**/*.ts', included: false, watched: false },
-      { pattern: appBase + '**/*.js.map', included: false, watched: false },
-      { pattern: testingSrcBase + '**/*.ts', included: false, watched: false },
-      { pattern: testingBase + '**/*.js.map', included: false, watched: false}
+      { pattern: appBase + 'app/components/**/*.ts', included: false, watched: false },
+      // { pattern: appBase + '**/*.js.map', included: false, watched: false },
+      // { pattern: testingSrcBase + '**/*.ts', included: false, watched: false },
+      // { pattern: testingBase + '**/*.js.map', included: false, watched: false}
     ],
+    exclude: [ appBase + '/**/main.ts' ],
 
     // Proxied base paths for loading assets
     proxies: {
