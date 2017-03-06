@@ -41,9 +41,6 @@ describe('Landing', () => {
 		fixture.detectChanges();
 		const element = de.nativeElement;
 
-		// Ausführung
-		let msg = 'Startpage should import header';
-
 		// Prüfung
 		expect(element.innerText).toBeDefined();
 	});

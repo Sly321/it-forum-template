@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
 	styleUrls: ['app/components/header/header.css']
 })
 export class Header {
-	heyhoworld: string = "heyho";
+	heyhoworld: string = 'heyho';
 
 	constructor() {
 	}
