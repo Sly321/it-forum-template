@@ -79,7 +79,6 @@ module.exports = function(config) {
       // { pattern: testingSrcBase + '**/*.ts', included: false, watched: false },
       // { pattern: testingBase + '**/*.js.map', included: false, watched: false}
     ],
-    exclude: [ appBase + '/**/main.ts' ],
 
     // Proxied base paths for loading assets
     proxies: {
@@ -87,7 +86,7 @@ module.exports = function(config) {
       '/base/src/node_modules/': '/base/node_modules/'
     },
 
-    exclude: [],
+	exclude: [ appBase + '/**/main.ts' ],
     preprocessors: {},
     reporters: ['progress', 'kjhtml'],
 

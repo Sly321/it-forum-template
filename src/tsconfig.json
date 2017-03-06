@@ -34,11 +34,7 @@
     ],
     "types" : [
       "jasmine",
-	  "node",
-	  "angular2",
-	  "karma",
-	  "chai",
-	  "mocha"
+	  "node"
   	],
 	"formatCodeOptions": {
 		"indentSize": 4,
