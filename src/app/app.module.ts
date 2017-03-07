@@ -17,6 +17,7 @@ import '../node_modules/rxjs/add/operator/toPromise';
 
 /** Services */
 import { Authentification } from './services/authentification/authentification.service';
+import { Firebase } from './services/firebase/firebase.service';
 
 /** Routes */
 import { routes } from './app.routes';
@@ -28,10 +29,10 @@ declare const firebase: any;
 /** Firebase Config */
 const firebaseConfig = {
 	apiKey: "AIzaSyCI0e6cf2Ybrs6yZ-98HrsCLMqmpu4kp1g",
-    authDomain: "it-forum-da016.firebaseapp.com",
-    databaseURL: "https://it-forum-da016.firebaseio.com",
-    storageBucket: "it-forum-da016.appspot.com",
-    messagingSenderId: "344282004742"
+	authDomain: "it-forum-da016.firebaseapp.com",
+	databaseURL: "https://it-forum-da016.firebaseio.com",
+	storageBucket: "it-forum-da016.appspot.com",
+	messagingSenderId: "344282004742"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -42,6 +43,6 @@ firebase.initializeApp(firebaseConfig);
 	// AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)],
 	declarations: [Wrapper, Landing, Header],
 	bootstrap: [Wrapper],
-	providers: [Authentification, ...AUTH_PROVIDERS]
+	providers: [Firebase, Authentification, ...AUTH_PROVIDERS]
 })
 export class AppModule { }
