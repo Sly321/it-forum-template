@@ -1,0 +1,21 @@
+{
+  "name": "src",
+  "homepage": "https://github.com/Sly321/it-forum-template",
+  "authors": [
+    "Sven Liebig <liebigsv@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/resources/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "firebase": "^3.7.0"
+  }
+}
