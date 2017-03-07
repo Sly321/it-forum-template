@@ -7,6 +7,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { Firebase } from '../../services/firebase/firebase.service';
 import { } from 'jasmine';
 
 import { Landing } from './landing.component';
@@ -18,7 +19,8 @@ describe('Landing', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [Landing]
+			declarations: [Landing],
+			providers: [Firebase]
 		}).overrideComponent(Landing, {
 			set: {
 				templateUrl: '/base/src/app/components/landing/landing.component.html',

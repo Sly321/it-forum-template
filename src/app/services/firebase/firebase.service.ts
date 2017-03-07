@@ -35,7 +35,7 @@ export class Firebase {
 	writePost(data: any) {
 		// Creates a post and returns the key
 		let key = firebase.database().ref().child('posts').push().key;
-		this.write(`posts/${key}`, data)
+		this.write(`posts/${key}`, data);
 	}
 
 	write(section: string, data: any) {
@@ -55,13 +55,13 @@ export class Firebase {
 		});
 	}
 
-	getByAttributeValue(section: string, attribute: string, value: string, callback: any, limit: number = 100) {
+	getByAttributeValue(section: string, attribute: string, value: string, callback: any, limit = 100) {
 		let dataRef = firebase.database().ref(section);
 		let query = dataRef.orderByChild(attribute).equalTo(value).limitToLast(limit);
 		this.getByQuery(query, callback);
 	}
 
-	get(section: string, callback: any, limit: number = 100) {
+	get(section: string, callback: any, limit = 100) {
 		let dataRef = firebase.database().ref(section);
 		let query = dataRef.limitToLast(limit);
 		this.getByQuery(query, callback);

@@ -1,6 +1,6 @@
 {
   "name": "it-forum-template",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "An angular template for an it forum.",
   "scripts": {
     "build": "tsc -p src/",
@@ -18,7 +18,7 @@
     "test": "concurrently \"npm run build:watch\" \"karma start karma.conf.js\"",
     "pretest:once": "npm run build",
     "test:once": "karma start karma.conf.js --single-run",
-    "lint": "tslint ./src/**/*.ts -t verbose"
+    "lint": "tslint ./src/**/*.ts -t verbose --exclude ./src/app/resources/lib/**/*.ts"
   },
   "keywords": [],
   "author": "Sven Liebig",
