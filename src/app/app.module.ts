@@ -21,7 +21,11 @@ import { Authentification } from './services/authentification/authentification.s
 /** Routes */
 import { routes } from './app.routes';
 
-/** Firebase Config
+/** Firebase */
+import './resources/lib/firebase/firebase.js';
+declare const firebase: any;
+
+/** Firebase Config */
 const firebaseConfig = {
 	apiKey: 'AIzaSyCPs0KVu3tGNUeYx8xJ9530YVRPBcPD_Yc',
 	authDomain: 'from-below.firebaseapp.com',
@@ -30,11 +34,7 @@ const firebaseConfig = {
 	messagingSenderId: '207279241584'
 };
 
-const firebaseAuthConfig = {
-	provider: AuthProviders.Password,
-	method: AuthMethods.Password,
-	remember: 'default'
-}; */
+firebase.initializeApp(firebaseConfig);
 
 
 @NgModule({
