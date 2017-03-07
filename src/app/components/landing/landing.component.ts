@@ -16,9 +16,40 @@ import { Firebase } from '../../services/firebase/firebase.service';
 export class Landing {
 	heyhoworld: string = 'heyho';
 
-	constructor(private fire: Firebase) {
+	constructor(private fire: Firebase) {/*
+		let post: any = {
+			authorid: 'uid-123',
+			title: 'title',
+			content: 'very long string in here with ü ä ö / # + ´ß : - .< and stuff',
+			date: new Date(),
+			id: '123455'
+		};
+		this.fire.writePost(post);
+		post = {
+			authorid: 'uid-123',
+			title: 'title',
+			content: 'very long string in here with ü ä ö / # + ´ß : - .< and stuff',
+			date: new Date(),
+			id: '12345'
+		};
+		this.fire.writePost(post);*/
 	}
 
 	ngOnInit() {
+		/*
+		this.fire.get('posts', (val) => {
+			console.log(val);
+		});
+
+		this.fire.removePostById('123455', (e: any) => {
+			console.log('delete');
+			console.log(e);
+
+			this.fire.get('posts', (val) => {
+				console.log(val);
+			});
+		});
+
+		this.fire.removePostById('12345');*/
 	}
 }

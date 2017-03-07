@@ -12,6 +12,21 @@ import { } from 'jasmine';
 
 import { Landing } from './landing.component';
 
+/** Firebase */
+import '../../resources/lib/firebase/firebase.js';
+declare const firebase: any;
+
+/** Firebase Config */
+const firebaseConfig = {
+	apiKey: 'AIzaSyCI0e6cf2Ybrs6yZ-98HrsCLMqmpu4kp1g',
+	authDomain: 'it-forum-da016.firebaseapp.com',
+	databaseURL: 'https://it-forum-da016.firebaseio.com',
+	storageBucket: 'it-forum-da016.appspot.com',
+	messagingSenderId: '344282004742'
+};
+
+firebase.initializeApp(firebaseConfig);
+
 describe('Landing', () => {
 	let de: DebugElement;
 	let comp: Landing;
