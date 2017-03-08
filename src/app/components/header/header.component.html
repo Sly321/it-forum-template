@@ -7,7 +7,8 @@
 		<ul class="right-menu">
 			<li><a href="#">Login</a></li>
 			<li><a href="#">Logout</a></li>
-			<li><input #search type="text" [value]="searchString" /></li>
+			<li><input #search type="text" [(ngModel)]="searchString" /></li>
 		</ul>
+		<div>{{searchString}}</div>
 	</div>
 </div>
