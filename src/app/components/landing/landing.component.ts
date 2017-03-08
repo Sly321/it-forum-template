@@ -14,7 +14,7 @@ import { Firebase } from '../../services/firebase/firebase.service';
 	styleUrls: ['app/components/landing/landing.css']
 })
 export class Landing {
-	heyhoworld: string = 'heyho';
+	searchString: string = '';
 
 	constructor(private fire: Firebase) {/*
 		let post: any = {

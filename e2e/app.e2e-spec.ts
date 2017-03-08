@@ -1,16 +1,16 @@
 import { browser, element, by } from 'protractor';
 import { } from 'jasmine';
 
-describe('QuickStart E2E Tests', function () {
+describe('QuickStart E2E Tests', function() {
 
-  let expectedMsg = 'heyho';
+	let expectedMsg = 'heyho';
 
-  beforeEach(function () {
-    browser.get('');
-  });
+	beforeEach(function() {
+		browser.get('');
+	});
 
-  it('should display header', function () {
-    //expect(element(by.css('header')).getText()).toEqual(expectedMsg);
-    expect(element(by.css('header')).isPresent());
-  });
+	it('should display header', function() {
+		//expect(element(by.css('header')).getText()).toEqual(expectedMsg);
+		expect(element(by.css('header')).isPresent());
+	});
 });
