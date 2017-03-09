@@ -4,6 +4,8 @@
  * ...				9.3.2017				Created
  */
 
+import { FormsModule } from '@angular/forms';
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
@@ -36,6 +38,7 @@ describe('Create', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
+			imports: [FormsModule],
 			declarations: [Create, Post, Header],
 			providers: [Firebase]
 		}).overrideComponent(Create, {
