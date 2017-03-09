@@ -11,15 +11,15 @@ import { Landing } from './components/landing/landing.component';
 import { Authentification } from './services/authentification/authentification.service';
 
 export const routes = [
-	{ path: '', component: Landing, pathMatch: 'full' }, /*
-	{ path: 'login', component: Login },
+	{ path: '', component: Landing, pathMatch: 'full' },
+	// { path: 'login', component: Login },
 	{
-		path: 'home', component: Home, canActivate: [Authentification],
+		path: 'post', redirectTo: '',
 		children: [
-			{ path: '', redirectTo: 'overview', pathMatch: 'full' },
-			{ path: 'overview', component: Overview },
-			{ path: 'shell', component: Shell }
+			{ path: '', redirectTo: 'new', pathMatch: 'full' },
+			//{ path: 'new', component: Create }
+			//{ path: 'view', component: Shell }
 		]
-	},*/
+	},
 	{ path: '**', component: Landing, canActivate: [Authentification] },
 ];
