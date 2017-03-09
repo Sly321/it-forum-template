@@ -26,6 +26,8 @@ const firebaseConfig = {
 	messagingSenderId: '344282004742'
 };
 
+firebase.initializeApp(firebaseConfig);
+
 describe('Create', () => {
 	let de: DebugElement;
 	let comp: Create;

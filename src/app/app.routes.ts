@@ -18,7 +18,7 @@ export const routes = [
 		children: [
 			{ path: '', redirectTo: 'new', pathMatch: 'full' },
 			{ path: 'new', component: Create }
-			//{ path: 'view', component: Shell }
+			// { path: 'view', component: Shell }
 		]
 	},
 	{ path: '**', component: Landing, canActivate: [Authentification] },
