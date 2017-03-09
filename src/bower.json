@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "firebase": "^3.7.0"
+    "firebase": "^3.7.0",
+    "ace-builds": "ace-build#^1.2.6"
   }
 }

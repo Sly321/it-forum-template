@@ -36,6 +36,11 @@
       rxjs: {
         defaultExtension: 'js'
       }
-    }
+  },
+	meta: {
+		'app/resources/lib/ace-builds/src-min/ace.js': { 
+			format: 'global'
+		}
+	}
   });
 })(this);

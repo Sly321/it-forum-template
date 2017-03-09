@@ -24,6 +24,10 @@ import { Firebase } from './services/firebase/firebase.service';
 /** Routes */
 import { routes } from './app.routes';
 
+/** Ace.js */
+import './resources/lib/ace-builds/src-min/ace.js';
+declare const ace: any;
+
 /** Firebase */
 import './resources/lib/firebase/firebase.js';
 declare const firebase: any;

@@ -11,6 +11,7 @@ import { } from 'jasmine';
 
 import { Post } from '../post/post.component';
 import { Create } from './create.component';
+import { Header } from '../header/header.component';
 
 /** Firebase */
 import { Firebase } from '../../services/firebase/firebase.service';
@@ -35,7 +36,7 @@ describe('Create', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [Create, Post],
+			declarations: [Create, Post, Header],
 			providers: [Firebase]
 		}).overrideComponent(Create, {
 			set: {
@@ -46,6 +47,11 @@ describe('Create', () => {
 			set: {
 				templateUrl: '/base/src/app/components/post/post.component.html',
 				styleUrls: ['/base/src/app/components/post/post.css']
+			}
+		}).overrideComponent(Header, {
+			set: {
+				templateUrl: '/base/src/app/components/header/header.component.html',
+				styleUrls: ['/base/src/app/components/header/header.css']
 			}
 		}).compileComponents();
 	}));
