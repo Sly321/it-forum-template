@@ -6,20 +6,17 @@
 
 import { Landing } from './components/landing/landing.component';
 import { Create } from './components/create/create.component';
-// import { Overview } from './components/overview/overview.component';
-// import { Shell } from './components/shell/shell.component';
+import { PageNotFound } from './components/pagenotfound/pagenotfound.component';
 import { Authentification } from './services/authentification/authentification.service';
 
 export const routes = [
 	{ path: '', component: Landing, pathMatch: 'full' },
-	// { path: 'create', component: Login },
 	{
 		path: 'post',
 		children: [
 			{ path: '', redirectTo: 'new', pathMatch: 'full' },
-			{ path: 'new', component: Create }
-			// { path: 'view', component: Shell }
+			{ path: 'new', component: Create, canActivate: [Authentification] }
 		]
 	},
-	{ path: '**', component: Landing, canActivate: [Authentification] },
+	{ path: '**', component: PageNotFound },
 ];

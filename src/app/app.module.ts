@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 /** Components */
+import { PageNotFound } from './components/pagenotfound/pagenotfound.component';
 import { Wrapper } from './components/wrapper/wrapper.component';
 import { Landing } from './components/landing/landing.component';
 import { Header } from './components/header/header.component';
@@ -15,7 +16,6 @@ import { Post } from './components/post/post.component';
 /** Third Party Angular */
 import { AUTH_PROVIDERS } from 'angular2-jwt';
 import '../node_modules/rxjs/add/operator/toPromise';
-// import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 
 /** Services */
 import { Authentification } from './services/authentification/authentification.service';
@@ -41,7 +41,7 @@ firebase.initializeApp(firebaseConfig);
 
 @NgModule({
 	imports: [FormsModule, HttpModule, BrowserModule, RouterModule.forRoot(routes)],
-	declarations: [Wrapper, Landing, Header, Create, Post],
+	declarations: [Wrapper, Landing, Header, Create, Post, PageNotFound],
 	bootstrap: [Wrapper],
 	providers: [Firebase, Authentification, ...AUTH_PROVIDERS]
 })
