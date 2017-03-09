@@ -14,7 +14,7 @@ export const routes = [
 	{ path: '', component: Landing, pathMatch: 'full' },
 	// { path: 'create', component: Login },
 	{
-		path: 'post', redirectTo: '',
+		path: 'post',
 		children: [
 			{ path: '', redirectTo: 'new', pathMatch: 'full' },
 			{ path: 'new', component: Create }
