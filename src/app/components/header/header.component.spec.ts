@@ -37,7 +37,7 @@ describe('Header', () => {
 
 	it('should create component', () => expect(comp).toBeDefined());
 
-	it('HtmlElement Should link to Startpage in the left header menu', () => {
+	it('HtmlElement Should link to Paketüberfluss in the left header menu', () => {
 		// Vorbereitung
 		let cssQuery = '.header-container > .left-menu > li > a';
 		de = fixture.debugElement.queryAll(By.css(cssQuery));
@@ -46,8 +46,8 @@ describe('Header', () => {
 		const element = de[0].nativeElement;
 		console.log(element);
 		// Ausführung
-		let expected = /Startpage/i;
-		let msg = 'Header should link to the startpage';
+		let expected = /Paketüberfluss/i;
+		let msg = 'Header should link to the Paketüberfluss';
 
 		// Prüfung
 		expect(element.innerText).toMatch(expected, msg);
