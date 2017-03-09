@@ -38,7 +38,7 @@ export class Firebase {
 	writePost(data: any) {
 		// Creates a post and returns the key
 		let key = firebase.database().ref().child('posts').push().key;
-		this.write(`posts/${key}`, data);
+		return this.write(`posts/${key}`, data);
 	}
 
 	write(section: string, data: any) {

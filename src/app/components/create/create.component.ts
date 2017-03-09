@@ -14,11 +14,45 @@ import { Firebase } from '../../services/firebase/firebase.service';
 	styleUrls: ['app/components/create/create.css']
 })
 export class Create {
-	heyhoworld: string = 'heyho';
+	title: string = '';
+	content: string = '';
 
 	constructor(private fire: Firebase) {
 	}
 
 	ngOnInit() {
+	}
+
+	submitPost() {
+		if (!this.validatePost()) {
+			// TODO Fehlermeldung in der Oberfläche #ULTRABOCK
+			return null;
+		}
+
+		let post = this.createPost();
+
+		let res = this.fire.writePost(post);
+
+		console.log(res);
+	}
+
+	createPost() {
+		let userid = '420';
+		let creationTime = new Date().getTime();
+
+		let post = {
+			authorid: userid,
+			title: this.title,
+			content: this.content,
+			date: creationTime,
+			id: `${userid}-${creationTime}`
+		};
+
+		console.log(post);
+		return post;
+	}
+
+	validatePost() {
+		return true;
 	}
 }

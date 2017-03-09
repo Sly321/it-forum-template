@@ -58,19 +58,39 @@ describe('Create', () => {
 			}
 		}).compileComponents();
 	}));
+
 	beforeEach(() => {
 		fixture = TestBed.createComponent(Create);
 		comp = fixture.componentInstance;
-		de = fixture.debugElement.query(By.css('.create-container'));
+		comp.title = 'just a normal title';
+		comp.content = 'This is the content of the post <code></code> test test';
 	});
 
 	it('should create component', () => expect(comp).toBeDefined());
 
-	/*
-
-	it('should have expected .create-container text to be heyho', () => {
+	it('should have the same content after post creation as the textarea has', () => {
+		// Vorbereitung
 		fixture.detectChanges();
+		de = fixture.debugElement.query(By.css('.create-container > #content'));
 		const ele = de.nativeElement;
-		expect(ele.innerText).toMatch(/heyho/i, '.create-container should say something about "heyho"');
-	});*/
+
+		// Ausführung
+		let post = comp.createPost();
+
+		// Prüfung
+		expect(post.content).toBe(ele.value);
+	});
+
+	it('should have the same title after post creation as the input has', () => {
+		// Vorbereitung
+		fixture.detectChanges();
+		de = fixture.debugElement.query(By.css('.create-container > #title'));
+		const ele = de.nativeElement;
+
+		// Ausführung
+		let post = comp.createPost();
+
+		// Prüfung
+		expect(post.title).toBe(ele.value);
+	});
 });
