@@ -5,19 +5,19 @@
  */
 
 import { Landing } from './components/landing/landing.component';
-// import { Login } from './components/login/login.component';
+import { Create } from './components/create/create.component';
 // import { Overview } from './components/overview/overview.component';
 // import { Shell } from './components/shell/shell.component';
 import { Authentification } from './services/authentification/authentification.service';
 
 export const routes = [
 	{ path: '', component: Landing, pathMatch: 'full' },
-	// { path: 'login', component: Login },
+	// { path: 'create', component: Login },
 	{
 		path: 'post', redirectTo: '',
 		children: [
 			{ path: '', redirectTo: 'new', pathMatch: 'full' },
-			//{ path: 'new', component: Create }
+			{ path: 'new', component: Create }
 			//{ path: 'view', component: Shell }
 		]
 	},

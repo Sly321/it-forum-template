@@ -6,6 +6,8 @@
 
 import { Component } from '@angular/core';
 
+import { Firebase } from '../../services/firebase/firebase.service';
+
 @Component({
 	selector: 'create',
 	templateUrl: 'app/components/create/create.component.html',
@@ -14,7 +16,7 @@ import { Component } from '@angular/core';
 export class Create {
 	heyhoworld: string = 'heyho';
 
-	constructor() {
+	constructor(private fire: Firebase) {
 	}
 
 	ngOnInit() {
