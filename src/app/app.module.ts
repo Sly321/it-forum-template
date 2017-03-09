@@ -40,7 +40,6 @@ firebase.initializeApp(firebaseConfig);
 
 @NgModule({
 	imports: [FormsModule, HttpModule, BrowserModule, RouterModule.forRoot(routes)],
-	// AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)],
 	declarations: [Wrapper, Landing, Header],
 	bootstrap: [Wrapper],
 	providers: [Firebase, Authentification, ...AUTH_PROVIDERS]
