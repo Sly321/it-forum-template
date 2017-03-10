@@ -20,6 +20,8 @@ import { Firebase } from '../../services/firebase/firebase.service';
 import '../../resources/lib/firebase/firebase.js';
 declare const firebase: any;
 
+import '../../resources/lib/ace-builds/src-min/ace.js';
+
 /** Firebase Config */
 const firebaseConfig = {
 	apiKey: 'AIzaSyCI0e6cf2Ybrs6yZ-98HrsCLMqmpu4kp1g',
