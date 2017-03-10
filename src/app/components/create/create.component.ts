@@ -7,6 +7,7 @@
 import { Component } from '@angular/core';
 
 import { Firebase } from '../../services/firebase/firebase.service';
+declare const ace: any;
 
 @Component({
 	selector: 'create',
@@ -16,11 +17,28 @@ import { Firebase } from '../../services/firebase/firebase.service';
 export class Create {
 	title: string = '';
 	content: string = '';
+	showPreview: boolean = false;
+	preview: any;
 
 	constructor(private fire: Firebase) {
 	}
 
 	ngOnInit() {
+		var editor = ace.edit("editor");
+		//editor.setTheme("ace/theme/monokai");
+		//editor.getSession().setMode("ace/mode/javascript");
+	}
+
+	previewPost() {
+		if (!this.validatePost()) {
+			// TODO Fehlermeldung in der Oberfläche #ULTRABOCK
+			return null;
+		}
+
+		let post = this.createPost();
+
+		this.preview = post;
+		this.showPreview = true;
 	}
 
 	submitPost() {

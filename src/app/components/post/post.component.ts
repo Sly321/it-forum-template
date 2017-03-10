@@ -4,7 +4,7 @@
  * ...				9.3.2017				Created
  */
 
-import { Component } from '@angular/core';
+import { Input, Component } from '@angular/core';
 
 @Component({
 	selector: 'post',
@@ -12,14 +12,13 @@ import { Component } from '@angular/core';
 	styleUrls: ['app/components/post/post.css']
 })
 export class Post {
-	title: string = '';
-	author: string = '';
-	created: Date = new Date();
-	content: string = '';
+	@Input() post: { title: string, content: string, author: string, created: Date };
 
 	constructor() {
 	}
 
 	ngOnInit() {
+		console.log('init');
+		console.log(this.post);
 	}
 }
