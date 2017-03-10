@@ -25,6 +25,13 @@ export class Create {
 
 	ngOnInit() {
 		var editor = ace.edit("editor");
+		var options = {
+			showLineNumbers: false,
+			highlightActiveLine: false,
+			showGutter: false,
+			fontSize: 18
+		};
+		editor.setOptions(options);
 		//editor.setTheme("ace/theme/monokai");
 		//editor.getSession().setMode("ace/mode/javascript");
 	}
