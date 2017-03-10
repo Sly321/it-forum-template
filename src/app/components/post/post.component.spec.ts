@@ -30,9 +30,12 @@ describe('Post', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(Post);
 		comp = fixture.componentInstance;
-		comp.title = 'test title';
-		comp.author = 'test author';
-		comp.content = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore ...';
+		comp.post = {
+			title: 'test title',
+			author: 'test author',
+			content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore ...',
+			created: new Date()
+		}
 	});
 
 	it('should create component', () => expect(comp).toBeDefined());
@@ -44,7 +47,7 @@ describe('Post', () => {
 		const ele = de.nativeElement;
 
 		// Prüfung
-		expect(ele.innerText).toBe(comp.title);
+		expect(ele.innerText).toBe(comp.post.title);
 	});
 
 	it('should have correct author', () => {
@@ -54,7 +57,7 @@ describe('Post', () => {
 		const ele = de.nativeElement;
 
 		// Prüfung
-		expect(ele.innerText).toBe(comp.author);
+		expect(ele.innerText).toBe(comp.post.author);
 	});
 
 	it('should have a creation date', () => {
@@ -64,7 +67,7 @@ describe('Post', () => {
 		const ele = de.nativeElement;
 
 		// Prüfung
-		expect(ele.innerText).toBe(comp.created.toString());
+		expect(ele.innerText).toBe(comp.post.created.toString());
 	});
 
 	it('should have content', () => {
@@ -74,6 +77,6 @@ describe('Post', () => {
 		const ele = de.nativeElement;
 
 		// Prüfung
-		expect(ele.innerText).toBe(comp.content);
+		expect(ele.innerText).toBe(comp.post.content);
 	});
 });
