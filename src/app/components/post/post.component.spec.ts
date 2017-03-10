@@ -35,7 +35,7 @@ describe('Post', () => {
 			author: 'test author',
 			content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore ...',
 			created: new Date()
-		}
+		};
 	});
 
 	it('should create component', () => expect(comp).toBeDefined());
