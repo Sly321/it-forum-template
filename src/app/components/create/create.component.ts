@@ -29,6 +29,7 @@ export class Create {
 			showLineNumbers: false,
 			highlightActiveLine: false,
 			showGutter: false,
+			showPrintMargin: false,
 			fontSize: 18
 		};
 		editor.setOptions(options);
@@ -63,13 +64,15 @@ export class Create {
 
 	createPost() {
 		let userid = '420';
+		let username = 'Hans Grünbach';
 		let creationTime = new Date().getTime();
 
 		let post = {
 			authorid: userid,
+			author: username,
 			title: this.title,
 			content: this.content,
-			date: creationTime,
+			created: creationTime,
 			id: `${userid}-${creationTime}`
 		};
 
