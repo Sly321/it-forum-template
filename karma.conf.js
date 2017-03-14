@@ -74,7 +74,7 @@ module.exports = function(config) {
       { pattern: appBase + 'app/components/**/*.css', included: true, watched: true },
 
       // Paths for debugging with source maps in dev tools
-      { pattern: appBase + 'app/components/**/*.ts', included: false, watched: false },
+      { pattern: appBase + 'app/components/**/*.ts', included: false, watched: false }
       // { pattern: appBase + '**/*.js.map', included: false, watched: false },
       // { pattern: testingSrcBase + '**/*.ts', included: false, watched: false },
       // { pattern: testingBase + '**/*.js.map', included: false, watched: false}

@@ -34,7 +34,7 @@ export class Create {
 		};
 		editor.setOptions(options);
 		// editor.setTheme("ace/theme/monokai");
-		//  editor.getSession().setMode("ace/mode/javascript");
+		// editor.getSession().setMode("ace/mode/javascript");
 	}
 
 	previewPost() {
