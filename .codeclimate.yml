@@ -13,10 +13,10 @@ engines:
     enabled: true
   markdownlint:
     enabled: true
-  ratings:
-    paths:
-    - "**.css"
-    - "**.js"
-    - "**.md"
+ratings:
+  paths:
+  - "**.css"
+  - "**.js"
+  - "**.md"
 exclude_paths:
-  - gulpfile.js
+- gulpfile.js
