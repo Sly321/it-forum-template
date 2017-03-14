@@ -1,3 +1,6 @@
+addons:
+  code_climate:
+    repo_token: 85f5d9d91bf3d3b6e75953af01542b7673b93e860056238fc28714085570e4c2
 dist: trusty
 sudo: required
 language: node_js

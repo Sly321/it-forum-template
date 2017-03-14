@@ -14,7 +14,7 @@ var builtPaths = (__karma__.config.builtPaths || ['src/'])
 __karma__.loaded = function () { };
 
 function isNecessaryFile(path) {
-  return path.slice(-3) == '.js' || path.slice(-5) == '.html';
+  return path.slice(-3) === '.js' || path.slice(-5) === '.html';
 }
 
 function isSpecFile(path) {
