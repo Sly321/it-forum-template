@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var util = require('gulp-util');
 var tsc = require('gulp-typescript');
+var sourcemaps = require('gulp-sourcemaps');
 //var mocha = require('gulp-mocha');
 //var minify = require('gulp-minify');
 var runSequence = require('run-sequence');
@@ -23,8 +24,10 @@ gulp.task('compile-test', function () {
 gulp.task('compile-src', function () {
     var tsProject = tsc.createProject('./src/tsconfig.json');
     return gulp.src(['./src/app/**/*.ts'])
+		.pipe(sourcemaps.init())
         .pipe(tsProject())
         .on('error', util.log)
+		.pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./src/app/'));
 });
 

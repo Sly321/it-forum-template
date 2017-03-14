@@ -11,9 +11,10 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter')
+      'karma-jasmine',
+	  'karma-coverage',
+      'karma-chrome-launcher',
+      'karma-jasmine-html-reporter'
     ],
 
     client: {
@@ -31,13 +32,10 @@ module.exports = function(config) {
     },
 
     files: [
-      // System.js for module loading
       'node_modules/systemjs/dist/system.src.js',
 
-      // Polyfills
       'node_modules/core-js/client/shim.js',
 
-      // zone.js
       'node_modules/zone.js/dist/zone.js',
       'node_modules/zone.js/dist/long-stack-trace-zone.js',
       'node_modules/zone.js/dist/proxy.js',
@@ -46,38 +44,20 @@ module.exports = function(config) {
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/fake-async-test.js',
 
-      // RxJs
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
-
-      // Paths loaded via module imports:
-      // Angular itself
       { pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
-
-      // Angular2 JWT
       { pattern: 'node_modules/angular2-jwt/**/*.js', included: false, watched: false },
       { pattern: 'node_modules/angular2-jwt/**/*.js.map', included: false, watched: false },
 
       { pattern: appBase + '/systemjs.config.js', included: false, watched: false },
       { pattern: appBase + '/systemjs.config.extras.js', included: false, watched: false },
-      'karma-test-shim.js', // optionally extend SystemJS mapping e.g., with barrels
-
-      // transpiled application & spec code paths loaded via module imports
+      'karma-test-shim.js',
       { pattern: appBase + '**/*.js', included: false, watched: true },
-      // { pattern: testingBase + '**/*.js', included: false, watched: true },
-
-
-      // Asset (HTML & CSS) paths loaded via Angular's component compiler
-      // (these paths need to be rewritten, see proxies section)
       { pattern: appBase + 'app/components/**/*.html', included: true, watched: true },
       { pattern: appBase + 'app/components/**/*.css', included: true, watched: true },
-
-      // Paths for debugging with source maps in dev tools
       { pattern: appBase + 'app/components/**/*.ts', included: false, watched: false }
-      // { pattern: appBase + '**/*.js.map', included: false, watched: false },
-      // { pattern: testingSrcBase + '**/*.ts', included: false, watched: false },
-      // { pattern: testingBase + '**/*.js.map', included: false, watched: false}
     ],
 
     // Proxied base paths for loading assets
@@ -87,8 +67,18 @@ module.exports = function(config) {
     },
 
 	exclude: [ appBase + '/**/main.ts' ],
-    preprocessors: {},
-    reporters: ['progress', 'kjhtml'],
+
+    reporters: ['progress', 'dots', 'coverage', 'kjhtml'],
+
+    preprocessors: {
+		'src/**/components/**/!(*spec).js': ['coverage']
+	},
+
+	coverageReporter: {
+        reporters:[
+            {type: 'json', subdir: '.', file: 'coverage-final.json'}
+        ]
+    },
 
     port: 9876,
     colors: true,
