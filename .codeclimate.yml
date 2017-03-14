@@ -1,2 +1,22 @@
+engines:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  duplication:
+  	enabled: true
+    config:
+    	languages:
+        - javascript
+        - css
+  fixme:
+    enabled: true
+  markdownlint:
+    enabled: true
+  ratings:
+    paths:
+    - "**.css"
+    - "**.js"
+    - "**.md"
 exclude_paths:
   - gulpfile.js
