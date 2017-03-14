@@ -56,7 +56,8 @@ export class Create {
 		}
 
 		let post = this.createPost();
-		let res = this.fire.writePost(post);
+		this.fire.writePost(post);
+		return post;
 	}
 
 	createPost() {

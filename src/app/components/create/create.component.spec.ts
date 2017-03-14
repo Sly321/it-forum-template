@@ -125,4 +125,23 @@ describe('Create', () => {
 		// Prüfung
 		expect(comp.fire.writePost).toHaveBeenCalledTimes(1);
 	});
+
+	it('should create a post and save it to the database', () => {
+		// Vorbereitung
+
+		// Ausführung
+		let post = comp.submitPost();
+		let postId = post.id;
+		let userId = post.authorid;
+
+		// Prüfung
+		comp.fire.getPostsByUserid(userId, (e) => {
+			console.log(e); // TODO Prüfung
+		});
+
+		// Cleanup
+		comp.fire.removePostById(postId, (e) => {
+			console.log(e); // TODO Prüfung
+		});
+	});
 });
