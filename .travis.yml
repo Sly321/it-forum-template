@@ -1,6 +1,6 @@
 addons:
   code_climate:
-    repo_token: 85f5d9d91bf3d3b6e75953af01542b7673b93e860056238fc28714085570e4c2
+    repo_token: a95ae6e9df00c8a9ee0393e793e8ee26e496884d6b74d2465428e6f33f5dc929
 dist: trusty
 sudo: required
 language: node_js
