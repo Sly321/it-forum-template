@@ -1,7 +1,7 @@
 /**
- * Class ${name}
+ * Class Firebase
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * ...				7.3.2017				Created
+ * Sven Liebig				7.3.2017				Created
  */
 
 import { Injectable } from '@angular/core';

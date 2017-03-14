@@ -71,7 +71,8 @@ module.exports = function(config) {
     reporters: ['progress', 'dots', 'coverage', 'kjhtml'],
 
     preprocessors: {
-		'src/**/components/**/!(*spec).js': ['coverage']
+		'src/**/components/**/!(*spec).js': ['coverage'],
+		'src/**/services/**/!(*spec).js': ['coverage']
 	},
 
 	coverageReporter: {

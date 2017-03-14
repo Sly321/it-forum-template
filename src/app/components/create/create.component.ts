@@ -20,7 +20,7 @@ export class Create {
 	showPreview: boolean = false;
 	preview: any;
 
-	constructor(private fire: Firebase) {
+	constructor(public fire: Firebase) {
 	}
 
 	ngOnInit() {
@@ -56,10 +56,7 @@ export class Create {
 		}
 
 		let post = this.createPost();
-
 		let res = this.fire.writePost(post);
-
-		console.log(res);
 	}
 
 	createPost() {
@@ -76,7 +73,6 @@ export class Create {
 			id: `${userid}-${creationTime}`
 		};
 
-		console.log(post);
 		return post;
 	}
 

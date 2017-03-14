@@ -1,6 +1,6 @@
 {
   "name": "it-forum-template",
-  "version": "0.1.62",
+  "version": "0.1.63",
   "description": "An angular template for an it forum.",
   "scripts": {
     "build": "tsc -p src/",
@@ -18,10 +18,11 @@
     "test": "concurrently \"npm run build:watch\" \"karma start karma.conf.js\"",
     "pretest:once": "npm run build",
     "test:once": "karma start karma.conf.js --single-run",
-    "clean:reports": "rm -r ./report",
+    "clean:coverage": "rm -r ./coverage",
     "coverage:lcov": "node_modules/.bin/remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/lcov.info -t lcovonly",
     "coverage:html": "node_modules/.bin/remap-istanbul -i ./coverage/coverage-final.json -o ./coverage/report-html -t html",
-    "test:coverage:lcov": "npm run test:once && npm run coverage-lcov",
+    "test:coverage:lcov": "npm run test:once && npm run coverage:lcov",
+    "test:coverage:html": "npm run clean:coverage && npm run test:once && npm run coverage:html",
     "lint": "tslint ./src/**/*.ts -t verbose --exclude ./src/app/resources/lib/**/*.ts",
     "postinstall": "cd src && node ../node_modules/bower/bin/bower install"
   },

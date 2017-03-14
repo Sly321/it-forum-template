@@ -95,4 +95,34 @@ describe('Create', () => {
 		// Prüfung
 		expect(post.title).toBe(ele.value);
 	});
+
+	it('should validate the post', () => {
+		// Ausführung
+		let validation = comp.validatePost();
+
+		// Prüfung
+		expect(validation).toBe(true);
+	});
+
+	it('should display post component after preview post', () => {
+		// Vorbereitung
+		comp.previewPost();
+
+		// Ausführung
+		let showPreview = comp.showPreview;
+
+		// Prüfung
+		expect(showPreview).toBe(true);
+	});
+
+	it('should call firebase write post 1 time', () => {
+		// Vorbereitung
+		spyOn(comp.fire, 'writePost');
+
+		// Ausführung
+		comp.submitPost();
+
+		// Prüfung
+		expect(comp.fire.writePost).toHaveBeenCalledTimes(1);
+	});
 });

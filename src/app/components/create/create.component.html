@@ -8,7 +8,7 @@
 
 		<button (click)="previewPost()">Preview</button><button (click)="submitPost()">Create</button>
 
-		<div id="preview" *ngIf="showPreview == true">
+		<div id="preview" *ngIf="showPreview">
 			<post [post]="preview"></post>
 		</div>
 	</div>
