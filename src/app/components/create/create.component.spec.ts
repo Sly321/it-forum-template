@@ -21,6 +21,7 @@ import '../../resources/lib/firebase/firebase.js';
 declare const firebase: any;
 
 import '../../resources/lib/ace-builds/src-min/ace.js';
+declare const ace: any;
 
 /** Firebase Config */
 const firebaseConfig = {
@@ -64,24 +65,12 @@ describe('Create', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(Create);
 		comp = fixture.componentInstance;
+		fixture.detectChanges();
 		comp.title = 'just a normal title';
-		comp.content = 'This is the content of the post <code></code> test test';
+		comp.setContent('This is the content of the post <code></code> test test');
 	});
 
 	it('should create component', () => expect(comp).toBeDefined());
-
-	it('should have the same content after post creation as the textarea has', () => {
-		// Vorbereitung
-		fixture.detectChanges();
-		de = fixture.debugElement.query(By.css('.create-container > #content'));
-		const ele = de.nativeElement;
-
-		// Ausführung
-		let post = comp.createPost();
-
-		// Prüfung
-		expect(post.content).toBe(ele.value);
-	});
 
 	it('should have the same title after post creation as the input has', () => {
 		// Vorbereitung
@@ -174,7 +163,7 @@ describe('Create', () => {
 
 	it('should not validate the post because content is empty', () => {
 		// Ausführung
-		comp.content = "";
+		comp.setContent('');
 		let validation = comp.validatePost();
 
 		// Prüfung

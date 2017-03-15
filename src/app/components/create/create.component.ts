@@ -16,16 +16,16 @@ declare const ace: any;
 })
 export class Create {
 	title: string = '';
-	content: string = '';
 	showPreview: boolean = false;
 	message: string = '';
 	preview: any;
+	editor: any;
 
 	constructor(public fire: Firebase) {
 	}
 
 	ngOnInit() {
-		let editor = ace.edit('editor');
+		this.editor = ace.edit('editor');
 		let options = {
 			showLineNumbers: false,
 			highlightActiveLine: false,
@@ -33,7 +33,7 @@ export class Create {
 			showPrintMargin: false,
 			fontSize: 18
 		};
-		editor.setOptions(options);
+		this.editor.setOptions(options);
 		// editor.setTheme("ace/theme/monokai");
 		// editor.getSession().setMode("ace/mode/javascript");
 	}
@@ -74,7 +74,7 @@ export class Create {
 			authorid: userid,
 			author: username,
 			title: this.title,
-			content: this.content,
+			content: this.getContent(),
 			created: creationTime,
 			id: `${userid}-${creationTime}`
 		};
@@ -83,9 +83,17 @@ export class Create {
 	}
 
 	validatePost() {
-		if (this.title == "" || this.content == "") {
+		if (this.title == "" || this.getContent() == "") {
 			return false;
 		}
 		return true;
+	}
+
+	getContent() {
+		return this.editor.getValue();
+	}
+
+	setContent(val) {
+		return this.editor.setValue(val);
 	}
 }
