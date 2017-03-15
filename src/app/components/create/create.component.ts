@@ -18,6 +18,7 @@ export class Create {
 	title: string = '';
 	content: string = '';
 	showPreview: boolean = false;
+	message: string = '';
 	preview: any;
 
 	constructor(public fire: Firebase) {
@@ -38,11 +39,15 @@ export class Create {
 	}
 
 	previewPost() {
+		this.showPreview = false;
+
 		if (!this.validatePost()) {
-			// TODO Fehlermeldung in der Oberfläche #ULTRABOCK
+			this.message = "asdf";
+			console.log("it is" + this.message);
 			return null;
 		}
 
+		this.message = "";
 		let post = this.createPost();
 
 		this.preview = post;

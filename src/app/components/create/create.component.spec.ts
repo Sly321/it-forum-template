@@ -117,6 +117,22 @@ describe('Create', () => {
 		expect(ele).toBeDefined();
 	});
 
+	it('should display error message after preview post because of no title', () => {
+		// Vorbereitung
+		comp.title = "";
+
+		// Ausführung
+		comp.previewPost();
+
+		// Vorbereitung
+		fixture.detectChanges();
+		de = fixture.debugElement.query(By.css('#error-message'));
+		const ele = de.nativeElement;
+
+		// Prüfung
+		expect(ele).toBeDefined();
+	});
+
 	it('should call firebase write post 1 time', () => {
 		// Vorbereitung
 		spyOn(comp.fire, 'writePost');
