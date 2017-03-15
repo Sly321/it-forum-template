@@ -95,6 +95,10 @@ export class Firebase {
 		this.getByAttributeValue('posts', 'userid', userId, callback);
 	}
 
+	getPostsByPostid(postId, callback) {
+		this.getByAttributeValue('posts', 'id', postId, callback);
+	}
+
 	getByAttributeValue(section: string, attribute: string, value: string, callback: any, limit = 100) {
 		let dataRef = firebase.database().ref(section);
 		let query = dataRef.orderByChild(attribute).equalTo(value).limitToLast(limit);
