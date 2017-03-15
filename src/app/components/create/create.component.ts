@@ -78,6 +78,9 @@ export class Create {
 	}
 
 	validatePost() {
+		if (this.title == "" || this.content == "") {
+			return false;
+		}
 		return true;
 	}
 }

@@ -146,4 +146,22 @@ describe('Create', () => {
 			console.log(e); // TODO Prüfung
 		});
 	});
+
+	it('should not validate the post because title is empty', () => {
+		// Ausführung
+		comp.title = "";
+		let validation = comp.validatePost();
+
+		// Prüfung
+		expect(validation).toBe(false);
+	});
+
+	it('should not validate the post because content is empty', () => {
+		// Ausführung
+		comp.content = "";
+		let validation = comp.validatePost();
+
+		// Prüfung
+		expect(validation).toBe(false);
+	});
 });
