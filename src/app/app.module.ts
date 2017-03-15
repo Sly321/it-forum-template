@@ -12,6 +12,7 @@ import { Landing } from './components/landing/landing.component';
 import { Header } from './components/header/header.component';
 import { Create } from './components/create/create.component';
 import { Post } from './components/post/post.component';
+import { View } from './components/view/view.component';
 
 /** Third Party Angular */
 import { AUTH_PROVIDERS } from 'angular2-jwt';
@@ -44,7 +45,7 @@ firebase.initializeApp(firebaseConfig);
 
 @NgModule({
 	imports: [FormsModule, HttpModule, BrowserModule, RouterModule.forRoot(routes)],
-	declarations: [Wrapper, Landing, Header, Create, Post, PageNotFound],
+	declarations: [Wrapper, Landing, Header, Create, Post, PageNotFound, View],
 	bootstrap: [Wrapper],
 	providers: [Firebase, Authentification, ...AUTH_PROVIDERS]
 })

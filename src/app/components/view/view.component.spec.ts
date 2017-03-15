@@ -11,6 +11,8 @@ import { } from 'jasmine';
 
 import { View } from './view.component';
 
+import { ActivatedRoute, Data } from '@angular/router';
+
 describe('View', () => {
 	let de: DebugElement;
 	let comp: View;
@@ -18,7 +20,17 @@ describe('View', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [View]
+			declarations: [View],
+			providers: [{
+				provide: ActivatedRoute,
+				useValue: {
+					params: {
+						subscribe: (fn: (value: Data) => void) => fn({
+							id: 3
+						})
+					}
+				}
+			},]
 		}).overrideComponent(View, {
 			set: {
 				templateUrl: '/base/src/app/components/view/view.component.html',
@@ -26,17 +38,18 @@ describe('View', () => {
 			}
 		}).compileComponents();
 	}));
+
 	beforeEach(() => {
 		fixture = TestBed.createComponent(View);
 		comp = fixture.componentInstance;
-		de = fixture.debugElement.query(By.css('.view-container'));
 	});
 
 	it('should create component', () => expect(comp).toBeDefined());
 
-	it('should have expected .view-container text to be heyho', () => {
+	it('should have expected .view-container text to be 3', () => {
 		fixture.detectChanges();
+		de = fixture.debugElement.query(By.css('.view-container'));
 		const ele = de.nativeElement;
-		expect(ele.innerText).toMatch(/heyho/i, '.view-container should say something about "heyho"');
+		expect(ele.innerText).toMatch(/3/i, '.view-container should contain 3');
 	});
 });
