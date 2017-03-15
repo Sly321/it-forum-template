@@ -1,6 +1,6 @@
 {
   "name": "it-forum-template",
-  "version": "0.1.75",
+  "version": "0.1.76",
   "description": "An angular template for an it forum.",
   "scripts": {
     "build": "tsc -p src/",

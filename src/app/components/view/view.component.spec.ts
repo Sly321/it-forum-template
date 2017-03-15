@@ -10,6 +10,7 @@ import { DebugElement } from '@angular/core';
 import { } from 'jasmine';
 
 import { View } from './view.component';
+import { Header } from '../header/header.component';
 
 import { ActivatedRoute, Data } from '@angular/router';
 
@@ -17,6 +18,7 @@ describe('View', () => {
 	let de: DebugElement;
 	let comp: View;
 	let fixture: ComponentFixture<View>;
+	const ID: number = 1235;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -26,7 +28,7 @@ describe('View', () => {
 				useValue: {
 					params: {
 						subscribe: (fn: (value: Data) => void) => fn({
-							id: 3
+							id: ID
 						})
 					}
 				}
@@ -35,6 +37,11 @@ describe('View', () => {
 			set: {
 				templateUrl: '/base/src/app/components/view/view.component.html',
 				styleUrls: ['/base/src/app/components/view/view.css']
+			}
+		}).overrideComponent(Header, {
+			set: {
+				templateUrl: '/base/src/app/components/header/header.component.html',
+				styleUrls: ['/base/src/app/components/header/header.css']
 			}
 		}).compileComponents();
 	}));
@@ -46,10 +53,10 @@ describe('View', () => {
 
 	it('should create component', () => expect(comp).toBeDefined());
 
-	it('should have expected .view-container text to be 3', () => {
+	it(`should have expected .view-container text to be ${ID}`, () => {
 		fixture.detectChanges();
 		de = fixture.debugElement.query(By.css('.view-container'));
 		const ele = de.nativeElement;
-		expect(ele.innerText).toMatch(/3/i, '.view-container should contain 3');
+		expect(ele.innerText).toBe(ID.toString(), `.view-container should contain ${ID}`);
 	});
 });
