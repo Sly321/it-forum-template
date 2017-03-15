@@ -5,6 +5,7 @@
  */
 
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	selector: 'view',
@@ -12,9 +13,12 @@ import { Component } from '@angular/core';
 	styleUrls: ['app/components/view/view.css']
 })
 export class View {
-	heyhoworld: string = 'heyho';
+	id: number;
 
-	constructor() {
+	constructor(private route: ActivatedRoute) {
+		this.route.params.subscribe(params => {
+			this.id = params['id'] || 0;
+		});
 	}
 
 	ngOnInit() {
