@@ -105,14 +105,16 @@ describe('Create', () => {
 	});
 
 	it('should display post component after preview post', () => {
-		// Vorbereitung
+		// Ausführung
 		comp.previewPost();
 
-		// Ausführung
-		let showPreview = comp.showPreview;
+		// Vorbereitung
+		fixture.detectChanges();
+		de = fixture.debugElement.query(By.css('post'));
+		const ele = de.nativeElement;
 
 		// Prüfung
-		expect(showPreview).toBe(true);
+		expect(ele).toBeDefined();
 	});
 
 	it('should call firebase write post 1 time', () => {
