@@ -25,11 +25,11 @@ declare const ace: any;
 
 /** Firebase Config */
 const firebaseConfig = {
-	apiKey: 'AIzaSyCI0e6cf2Ybrs6yZ-98HrsCLMqmpu4kp1g',
-	authDomain: 'it-forum-da016.firebaseapp.com',
-	databaseURL: 'https://it-forum-da016.firebaseio.com',
-	storageBucket: 'it-forum-da016.appspot.com',
-	messagingSenderId: '344282004742'
+	apiKey: "AIzaSyCmyfHci_ZCv14tXCX5K4ztY6pzby6ekVs",
+	authDomain: "it-forum-test.firebaseapp.com",
+	databaseURL: "https://it-forum-test.firebaseio.com",
+	storageBucket: "it-forum-test.appspot.com",
+	messagingSenderId: "987539667188"
 };
 
 firebase.initializeApp(firebaseConfig);

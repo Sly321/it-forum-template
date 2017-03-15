@@ -14,11 +14,26 @@ import { Header } from '../header/header.component';
 
 import { ActivatedRoute, Data } from '@angular/router';
 
+/** Firebase */
+import { Firebase } from '../../services/firebase/firebase.service';
+
 describe('View', () => {
 	let de: DebugElement;
 	let comp: View;
 	let fixture: ComponentFixture<View>;
-	const ID: number = 1235;
+	const ID: number = 12345;
+
+	beforeAll(() => {
+		let post = {
+			authorid: "test-author-id",
+			author: "test-username",
+			title: "test-title",
+			content: "test-content",
+			created: new Date().getTime(),
+			id: ID
+		};
+		Firebase.prototype.writePost(post)
+	});
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -32,7 +47,7 @@ describe('View', () => {
 						})
 					}
 				}
-			},]
+			}, Firebase]
 		}).overrideComponent(View, {
 			set: {
 				templateUrl: '/base/src/app/components/view/view.component.html',
@@ -58,5 +73,9 @@ describe('View', () => {
 		de = fixture.debugElement.query(By.css('.view-container'));
 		const ele = de.nativeElement;
 		expect(ele.innerText).toBe(ID.toString(), `.view-container should contain ${ID}`);
+	});
+
+	afterAll(() => {
+		Firebase.prototype.removePostById(ID);
 	});
 });

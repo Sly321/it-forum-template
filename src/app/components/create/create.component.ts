@@ -33,6 +33,7 @@ export class Create {
 			showPrintMargin: false,
 			fontSize: 18
 		};
+		this.editor.$blockScrolling = Infinity
 		this.editor.setOptions(options);
 		// editor.setTheme("ace/theme/monokai");
 		// editor.getSession().setMode("ace/mode/javascript");
