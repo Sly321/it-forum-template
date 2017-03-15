@@ -55,6 +55,7 @@ module.exports = function(config) {
       { pattern: appBase + '/systemjs.config.extras.js', included: false, watched: false },
       'karma-test-shim.js',
       { pattern: appBase + '**/*.js', included: false, watched: true },
+      { pattern: appBase + 'app/components/**/*.js.map', included: false, watched: false },
       { pattern: appBase + 'app/components/**/*.html', included: true, watched: true },
       { pattern: appBase + 'app/components/**/*.css', included: true, watched: true },
       { pattern: appBase + 'app/components/**/*.ts', included: false, watched: false }
