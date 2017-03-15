@@ -91,11 +91,11 @@ export class Firebase {
 		// TODO Sven Liebig
 	}
 
-	getPostsByUserid(userId, callback) {
+	getPostsByUserid(userId, callback = (e) => { }) {
 		this.getByAttributeValue('posts', 'userid', userId, callback);
 	}
 
-	getPostsByPostid(postId, callback) {
+	getPostsByPostid(postId, callback = (e) => { }) {
 		this.getByAttributeValue('posts', 'id', postId, callback);
 	}
 

@@ -1,6 +1,8 @@
 <header></header>
 <div class="view-wrapper">
 	<div class="view-container">
-		{{ id }}
+		<div *ngIf="post != null">
+			<post [post]="post"></post>
+		</div>
 	</div>
 </div>
