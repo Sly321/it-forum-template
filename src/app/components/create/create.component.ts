@@ -79,14 +79,14 @@ export class Create {
 	}
 
 	validatePost() {
-		if (this.title == "") {
-			this.message = "asdf";
+		if (this.title === '') {
+			this.message = 'asdf';
 			return false;
-		} else if (this.getContent() == "") {
-			this.message = "tzui";
+		} else if (this.getContent() === '') {
+			this.message = 'tzui';
 			return false;
 		}
-		this.message = "";
+		this.message = '';
 		return true;
 	}
 

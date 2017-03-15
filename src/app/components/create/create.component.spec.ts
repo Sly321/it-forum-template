@@ -108,7 +108,7 @@ describe('Create', () => {
 
 	it('should display error message after preview post because of no title', () => {
 		// Vorbereitung
-		comp.title = "";
+		comp.title = '';
 
 		// Ausführung
 		comp.previewPost();
@@ -171,7 +171,7 @@ describe('Create', () => {
 
 	it('should not validate the post because title is empty', () => {
 		// Ausführung
-		comp.title = "";
+		comp.title = '';
 		let validation = comp.validatePost();
 
 		// Prüfung
