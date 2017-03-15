@@ -1,7 +1,7 @@
 /**
  * Class Create
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * ...				9.3.2017				Created
+ * Sven Liebig				9.3.2017				Created
  */
 
 import { Component } from '@angular/core';
@@ -42,12 +42,9 @@ export class Create {
 		this.showPreview = false;
 
 		if (!this.validatePost()) {
-			this.message = "asdf";
-			console.log("it is" + this.message);
 			return null;
 		}
 
-		this.message = "";
 		let post = this.createPost();
 
 		this.preview = post;
@@ -56,7 +53,6 @@ export class Create {
 
 	submitPost() {
 		if (!this.validatePost()) {
-			// TODO Fehlermeldung in der Oberfläche #ULTRABOCK
 			return null;
 		}
 
@@ -83,9 +79,14 @@ export class Create {
 	}
 
 	validatePost() {
-		if (this.title == "" || this.getContent() == "") {
+		if (this.title == "") {
+			this.message = "asdf";
+			return false;
+		} else if (this.getContent() == "") {
+			this.message = "tzui";
 			return false;
 		}
+		this.message = "";
 		return true;
 	}
 

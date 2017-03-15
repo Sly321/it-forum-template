@@ -1,7 +1,8 @@
 <header></header>
 <div class="create-wrapper">
 	<div class="create-container">
-		<div id="error-message" *ngIf="message != ''" [innerHTML]="message">
+		<div id="error-message" *ngIf="message != ''">
+			{{ message }}
 		</div>
 		<input [(ngModel)]="title" [(value)]="title" type="text" placeholder="Titel" id="title"/>
 

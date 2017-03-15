@@ -1,7 +1,7 @@
 /**
  * Test Create
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * ...				9.3.2017				Created
+ * Sven Liebig				9.3.2017				Created
  */
 
 import { FormsModule } from '@angular/forms';
@@ -112,6 +112,23 @@ describe('Create', () => {
 
 		// Ausführung
 		comp.previewPost();
+
+		// Vorbereitung
+		fixture.detectChanges();
+		de = fixture.debugElement.query(By.css('#error-message'));
+		const ele = de.nativeElement;
+
+		// Prüfung
+		expect(ele).toBeDefined();
+	});
+
+	it('should display error message after submit post because of no content', () => {
+		// Vorbereitung
+		spyOn(comp.fire, 'writePost');
+		comp.setContent('');
+
+		// Ausführung
+		comp.submitPost();
 
 		// Vorbereitung
 		fixture.detectChanges();
