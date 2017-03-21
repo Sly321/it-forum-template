@@ -87,8 +87,10 @@ export class Firebase {
 	/* * * * * * * * * */
 	/* Get Methods     */
 	/* * * * * * * * * */
-	getTenLatestPosts() {
-		// TODO Sven Liebig
+	getTenLatestPosts(callback = (e) => { }) {
+		let dataRef = firebase.database().ref('posts');
+		let query = dataRef.limitToLast(10);
+		this.getByQuery(query, callback);
 	}
 
 	getPostsByUserid(userId, callback = (e) => { }) {
