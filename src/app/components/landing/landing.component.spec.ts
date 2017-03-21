@@ -4,6 +4,8 @@
  * Sven Liebig				3.3.2017				Created
  */
 
+import { RouterModule } from '@angular/router';
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
@@ -19,6 +21,7 @@ describe('Landing', () => {
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
+			imports: [RouterModule],
 			declarations: [Landing],
 			providers: [Firebase]
 		}).overrideComponent(Landing, {

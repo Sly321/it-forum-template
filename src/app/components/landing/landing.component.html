@@ -1,5 +1,10 @@
+<header></header>
 <div class="landing-wrapper">
 	<div class="landing-container">
-		<header></header>
+		<div *ngFor="let post of postArray">
+			<div>
+				{{ post.title }} - {{ post.author }} - {{ timeStampToLocaleDate(post.created) }} - <a [routerLink]="[ '/view/' + post.id ]">Link</a>
+			</div>
+		</div>
 	</div>
 </div>

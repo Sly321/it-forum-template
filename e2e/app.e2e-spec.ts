@@ -10,7 +10,7 @@ describe('QuickStart E2E Tests', function() {
 	});
 
 	it('should display header', function() {
-		//expect(element(by.css('header')).getText()).toEqual(expectedMsg);
+		browser.ignoreSynchronization = true;
 		expect(element(by.css('header')).isPresent());
 	});
 });
