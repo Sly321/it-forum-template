@@ -1,7 +1,7 @@
 <header></header>
 <div class="view-wrapper">
 	<div class="view-container">
-		<div *ngIf="post != null">
+		<div *ngIf="showPost()">
 			<post [post]="post"></post>
 		</div>
 	</div>

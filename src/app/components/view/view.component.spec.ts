@@ -85,9 +85,12 @@ describe('View', () => {
 		expect(ele).toBeDefined();
 	});
 
-	it(`should get a post`, () => {
+	it(`should get a post`, (done) => {
 		fixture.detectChanges();
-		expect(comp.post).toBeDefined();
+		setTimeout(() => {
+			expect(comp.showPost()).toBe(true);
+			done();
+		}, 1000);
 	});
 
 	afterEach(() => {

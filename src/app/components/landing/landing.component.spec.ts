@@ -39,7 +39,7 @@ describe('Landing', () => {
 
 	it('should create component', () => expect(comp).toBeDefined());
 
-	it('HtmlElement Should be Startpage link in the left header menu', () => {
+	it('should have startpage link in the left header menu', () => {
 		// Vorbereitung
 		let cssQuery = 'header';
 		de = fixture.debugElement.query(By.css(cssQuery));
@@ -48,5 +48,18 @@ describe('Landing', () => {
 
 		// Prüfung
 		expect(element.innerText).toBeDefined();
+	});
+
+	it('should convert date to localeString correctly', () => {
+		// Vorbereitung
+		let now = new Date();
+		let timeStampNow = now.getTime();
+		let localStringNow = now.toLocaleString();
+
+		// Ausführung
+		let string = comp.timeStampToLocaleDate(timeStampNow);
+
+		// Prüfung
+		expect(string).toBe(localStringNow);
 	});
 });
