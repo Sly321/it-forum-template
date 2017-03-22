@@ -5,6 +5,7 @@
  */
 
 import { Injectable } from '@angular/core';
+import { Beitrag } from '../../components/post/post.model';
 
 @Injectable()
 export class Firebase {
@@ -35,7 +36,7 @@ export class Firebase {
 	/* * * * * * * * * */
 	/* Write Methods   */
 	/* * * * * * * * * */
-	writePost(data: any) {
+	writePost(data: Beitrag) {
 		// Creates a post and returns the key
 		let key = firebase.database().ref().child('posts').push().key;
 		return this.write(`posts/${key}`, data);

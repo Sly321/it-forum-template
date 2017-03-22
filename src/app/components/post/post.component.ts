@@ -1,10 +1,11 @@
 /**
  * Class Post
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
- * ...				9.3.2017				Created
+ * Sven Liebig				9.3.2017				Created
  */
 
 import { Input, Component } from '@angular/core';
+import { Beitrag } from './post.model';
 
 @Component({
 	selector: 'post',
@@ -12,13 +13,11 @@ import { Input, Component } from '@angular/core';
 	styleUrls: ['app/components/post/post.css']
 })
 export class Post {
-	@Input() post: { title: string, content: string, author: string, created: Date };
+	@Input() post: Beitrag;
 
 	constructor() {
 	}
 
 	ngOnInit() {
-		console.log('init');
-		console.log(this.post);
 	}
 }
