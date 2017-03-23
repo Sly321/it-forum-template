@@ -1,4 +1,4 @@
-export interface Beitrag {
+export interface Article {
 	author: string;
 	authorid: string;
 	content: string;

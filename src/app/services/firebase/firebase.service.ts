@@ -5,7 +5,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { Beitrag } from '../../components/post/post.model';
+import { Article } from '../../components/post/post.model';
 
 @Injectable()
 export class Firebase {
@@ -36,7 +36,7 @@ export class Firebase {
 	/* * * * * * * * * */
 	/* Write Methods   */
 	/* * * * * * * * * */
-	writePost(data: Beitrag) {
+	writePost(data: Article) {
 		// Creates a post and returns the key
 		let key = firebase.database().ref().child('posts').push().key;
 		return this.write(`posts/${key}`, data);
@@ -63,7 +63,7 @@ export class Firebase {
 	}
 	*/
 
-	removePostById(postId, callback = (e) => { }) {
+	removePostById(postId, callback: (e) => void) {
 		this.removeByAttributeValue('posts', 'id', postId, callback);
 	}
 
@@ -88,21 +88,21 @@ export class Firebase {
 	/* * * * * * * * * */
 	/* Get Methods     */
 	/* * * * * * * * * */
-	getTenLatestPosts(callback = (e) => { }) {
+	getTenLatestPosts(callback: (e: Array<Article>) => void) {
 		let dataRef = firebase.database().ref('posts');
 		let query = dataRef.limitToLast(10);
 		this.getByQuery(query, callback);
 	}
 
-	getPostsByUserid(userId, callback = (e) => { }) {
+	getPostsByUserid(userId, callback: (e: Array<Article>) => void) {
 		this.getByAttributeValue('posts', 'userid', userId, callback);
 	}
 
-	getPostsByPostid(postId, callback = (e) => { }) {
+	getPostsByPostid(postId, callback: (e: Array<Article>) => void) {
 		this.getByAttributeValue('posts', 'id', postId, callback);
 	}
 
-	getByAttributeValue(section: string, attribute: string, value: string, callback: any, limit = 100) {
+	getByAttributeValue(section: string, attribute: string, value: string, callback: (e: Array<Article>) => void, limit = 100) {
 		let dataRef = firebase.database().ref(section);
 		let query = dataRef.orderByChild(attribute).equalTo(value).limitToLast(limit);
 		this.getByQuery(query, callback);
@@ -111,7 +111,7 @@ export class Firebase {
 	getByQuery(query, callback) {
 		query.once('value')
 			.then(function(dataSnapshot: any) {
-				let result: any = [];
+				let result: Array<Article> = [];
 				dataSnapshot.forEach(function(data: any) {
 					result.push(data.val());
 				});

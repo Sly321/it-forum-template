@@ -5,7 +5,7 @@
  */
 
 import { Input, Component } from '@angular/core';
-import { Beitrag } from './post.model';
+import { Article } from './post.model';
 
 @Component({
 	selector: 'post',
@@ -13,7 +13,7 @@ import { Beitrag } from './post.model';
 	styleUrls: ['app/components/post/post.css']
 })
 export class Post {
-	@Input() post: Beitrag;
+	@Input() post: Article;
 
 	constructor() {
 	}

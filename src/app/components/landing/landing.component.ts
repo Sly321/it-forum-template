@@ -20,7 +20,7 @@ export class Landing {
 	constructor(private fire: Firebase) {
 		this.fire.getTenLatestPosts((e) => {
 			e.sort((a, b) => {
-				return a.created < b.created;
+				return a.created - b.created;
 			});
 			this.postArray = e;
 		});

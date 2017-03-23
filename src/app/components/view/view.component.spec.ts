@@ -12,6 +12,7 @@ import { By } from '@angular/platform-browser';
 import { } from 'jasmine';
 
 import { Post } from '../post/post.component';
+import { Article } from '../post/post.model';
 import { View } from './view.component';
 import { Header } from '../header/header.component';
 
@@ -24,17 +25,16 @@ describe('View', () => {
 	let de: DebugElement;
 	let comp: View;
 	let fixture: ComponentFixture<View>;
-	const ID = 12345;
+	const ID = '12345';
 
 	beforeAll(() => {
-		let post = {
-			authorid: 'test-author-id',
-			author: 'test-username',
-			title: 'test-title',
-			content: 'test-content',
-			created: new Date().getTime(),
-			id: ID
-		};
+		let post: Article;
+		post.authorid = 'test-author-id';
+		post.author = 'test-username';
+		post.title = 'test-title';
+		post.content = 'test-content';
+		post.created = new Date().getTime();
+		post.id = ID;
 		Firebase.prototype.writePost(post);
 	});
 
