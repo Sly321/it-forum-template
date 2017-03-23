@@ -28,13 +28,7 @@ describe('View', () => {
 	const ID = '12345';
 
 	beforeAll(() => {
-		let post: Article;
-		post.authorid = 'test-author-id';
-		post.author = 'test-username';
-		post.title = 'test-title';
-		post.content = 'test-content';
-		post.created = new Date().getTime();
-		post.id = ID;
+		let post = new Article('test-author-id', 'test-username', 'test-content', new Date().getTime(), ID, 'test title');
 		Firebase.prototype.writePost(post);
 	});
 

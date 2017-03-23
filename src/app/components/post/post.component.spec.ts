@@ -10,6 +10,7 @@ import { DebugElement } from '@angular/core';
 import { } from 'jasmine';
 
 import { Post } from './post.component';
+import { Article } from './post.model';
 
 describe('Post', () => {
 	let de: DebugElement;
@@ -30,12 +31,7 @@ describe('Post', () => {
 	beforeEach(() => {
 		fixture = TestBed.createComponent(Post);
 		comp = fixture.componentInstance;
-		comp.post = {
-			title: 'test title',
-			author: 'test author',
-			content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore ...',
-			created: new Date()
-		};
+		comp.post = new Article('author?: string', 'authorid?: string', 'content?: string', 0, 'id?: string', 'title?: string');
 	});
 
 	it('should create component', () => expect(comp).toBeDefined());

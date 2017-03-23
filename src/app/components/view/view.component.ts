@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Firebase } from '../../services/firebase/firebase.service';
 
+import { Article } from '../post/post.model';
+
 @Component({
 	selector: 'view',
 	templateUrl: 'app/components/view/view.component.html',
@@ -15,7 +17,7 @@ import { Firebase } from '../../services/firebase/firebase.service';
 })
 export class View {
 	id: number;
-	post: any = null;
+	post: Article = null;
 
 	constructor(private route: ActivatedRoute, private fire: Firebase) {
 		this.route.params.subscribe(params => {
