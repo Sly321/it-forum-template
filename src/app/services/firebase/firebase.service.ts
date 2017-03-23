@@ -63,7 +63,7 @@ export class Firebase {
 	}
 	*/
 
-	removePostById(postId, callback: (e) => void) {
+	removePostById(postId, callback = (e) => { }) {
 		this.removeByAttributeValue('posts', 'id', postId, callback);
 	}
 
