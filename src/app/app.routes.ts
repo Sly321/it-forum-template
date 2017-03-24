@@ -20,5 +20,5 @@ export const routes = [
 			{ path: 'new', component: Create, canActivate: [Authentification] }
 		]
 	},
-	{ path: '**', component: PageNotFound },
+	{ path: '**', component: PageNotFound }
 ];

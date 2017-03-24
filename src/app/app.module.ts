@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 /** Components */
 import { PageNotFound } from './components/pagenotfound/pagenotfound.component';
 import { Wrapper } from './components/wrapper/wrapper.component';
+import { Comment } from './components/comment/comment.component';
 import { Landing } from './components/landing/landing.component';
 import { Header } from './components/header/header.component';
 import { Create } from './components/create/create.component';
@@ -45,7 +46,7 @@ firebase.initializeApp(firebaseConfig);
 
 @NgModule({
 	imports: [FormsModule, HttpModule, BrowserModule, RouterModule.forRoot(routes)],
-	declarations: [Wrapper, Landing, Header, Create, Post, PageNotFound, View],
+	declarations: [Wrapper, Landing, Header, Create, Post, PageNotFound, View, Comment],
 	bootstrap: [Wrapper],
 	providers: [Firebase, Authentification, ...AUTH_PROVIDERS]
 })
